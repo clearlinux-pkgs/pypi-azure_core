@@ -4,12 +4,13 @@
 #
 Name     : pypi-azure_core
 Version  : 1.21.1
-Release  : 1
+Release  : 2
 URL      : https://files.pythonhosted.org/packages/89/79/5e937f85e0e2876539a3bff63a6b89e516f4e093e2c46e60aad8216acb31/azure-core-1.21.1.zip
 Source0  : https://files.pythonhosted.org/packages/89/79/5e937f85e0e2876539a3bff63a6b89e516f4e093e2c46e60aad8216acb31/azure-core-1.21.1.zip
 Summary  : Microsoft Azure Core Library for Python
 Group    : Development/Tools
 License  : MIT
+Requires: pypi-azure_core-license = %{version}-%{release}
 Requires: pypi-azure_core-python = %{version}-%{release}
 Requires: pypi-azure_core-python3 = %{version}-%{release}
 BuildRequires : buildreq-distutils3
@@ -20,6 +21,14 @@ BuildRequires : pypi(six)
 # Azure Core shared client library for Python
         
         Azure core provides shared exceptions and modules for Python SDK client libraries.
+
+%package license
+Summary: license components for the pypi-azure_core package.
+Group: Default
+
+%description license
+license components for the pypi-azure_core package.
+
 
 %package python
 Summary: python components for the pypi-azure_core package.
@@ -51,7 +60,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1639046087
+export SOURCE_DATE_EPOCH=1639046371
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -66,6 +75,8 @@ python3 setup.py build
 %install
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
+mkdir -p %{buildroot}/usr/share/package-licenses/pypi-azure_core
+cp %{_builddir}/azure-core-1.21.1/LICENSE %{buildroot}/usr/share/package-licenses/pypi-azure_core/5d941660d20397d61e58adb87e2dd05fa60828ef
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -73,6 +84,10 @@ echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/pypi-azure_core/5d941660d20397d61e58adb87e2dd05fa60828ef
 
 %files python
 %defattr(-,root,root,-)
