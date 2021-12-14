@@ -4,7 +4,7 @@
 #
 Name     : pypi-azure_core
 Version  : 1.21.1
-Release  : 2
+Release  : 3
 URL      : https://files.pythonhosted.org/packages/89/79/5e937f85e0e2876539a3bff63a6b89e516f4e093e2c46e60aad8216acb31/azure-core-1.21.1.zip
 Source0  : https://files.pythonhosted.org/packages/89/79/5e937f85e0e2876539a3bff63a6b89e516f4e093e2c46e60aad8216acb31/azure-core-1.21.1.zip
 Summary  : Microsoft Azure Core Library for Python
