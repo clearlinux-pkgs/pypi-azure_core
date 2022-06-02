@@ -1,5 +1,5 @@
 PKG_NAME := pypi-azure_core
-URL = https://files.pythonhosted.org/packages/f2/b0/334c52e5bee1c46aec7a1b62739be6ea9c19ace38f54ca4510d45398071d/azure-core-1.24.0.zip
+URL = https://files.pythonhosted.org/packages/f0/b1/b16df381dcf33180b57b5c87b7c478725e64bf3cfb85a92c254cd611c8d4/azure-core-1.24.1.zip
 ARCHIVES = 
 
 include ../common/Makefile.common
