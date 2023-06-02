@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-azure_core
-Version  : 1.26.4
-Release  : 29
-URL      : https://files.pythonhosted.org/packages/5a/47/f317d1eb9cc7e9260d336c2d1cc7870e9a388deb26d8c8e763c2048c82c5/azure-core-1.26.4.zip
-Source0  : https://files.pythonhosted.org/packages/5a/47/f317d1eb9cc7e9260d336c2d1cc7870e9a388deb26d8c8e763c2048c82c5/azure-core-1.26.4.zip
+Version  : 1.27.0
+Release  : 30
+URL      : https://files.pythonhosted.org/packages/da/2d/afa02427822abf435ae0ec10b8b53626f9fbf32f694610141c283ad66e98/azure-core-1.27.0.zip
+Source0  : https://files.pythonhosted.org/packages/da/2d/afa02427822abf435ae0ec10b8b53626f9fbf32f694610141c283ad66e98/azure-core-1.27.0.zip
 Summary  : Microsoft Azure Core Library for Python
 Group    : Development/Tools
 License  : MIT
@@ -55,10 +55,10 @@ python3 components for the pypi-azure_core package.
 
 
 %prep
-%setup -q -n azure-core-1.26.4
-cd %{_builddir}/azure-core-1.26.4
+%setup -q -n azure-core-1.27.0
+cd %{_builddir}/azure-core-1.27.0
 pushd ..
-cp -a azure-core-1.26.4 buildavx2
+cp -a azure-core-1.27.0 buildavx2
 popd
 
 %build
@@ -66,15 +66,15 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1680823422
+export SOURCE_DATE_EPOCH=1685718393
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
 export NM=gcc-nm
-export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
-export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz "
+export CFLAGS="$CFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FCFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export FFLAGS="$FFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
+export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonly -ffat-lto-objects -flto=auto -g1 -gno-column-info -gno-variable-location-views -gz=zstd "
 export MAKEFLAGS=%{?_smp_mflags}
 python3 -m build --wheel --skip-dependency-check --no-isolation
 pushd ../buildavx2/
