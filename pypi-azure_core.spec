@@ -4,10 +4,10 @@
 # Using build pattern: pyproject
 #
 Name     : pypi-azure_core
-Version  : 1.29.3
-Release  : 36
-URL      : https://files.pythonhosted.org/packages/63/c5/8023aaea4f8b8a512e883a4f8933fb6e5241b0e6db6f0f992bf9d89759ae/azure-core-1.29.3.tar.gz
-Source0  : https://files.pythonhosted.org/packages/63/c5/8023aaea4f8b8a512e883a4f8933fb6e5241b0e6db6f0f992bf9d89759ae/azure-core-1.29.3.tar.gz
+Version  : 1.29.4
+Release  : 37
+URL      : https://files.pythonhosted.org/packages/fa/19/43a9eb812b4d6071fdc2c55640318f7eb5a1be8dbd3b6f9d96a1996e1bb6/azure-core-1.29.4.tar.gz
+Source0  : https://files.pythonhosted.org/packages/fa/19/43a9eb812b4d6071fdc2c55640318f7eb5a1be8dbd3b6f9d96a1996e1bb6/azure-core-1.29.4.tar.gz
 Summary  : Microsoft Azure Core Library for Python
 Group    : Development/Tools
 License  : MIT
@@ -55,10 +55,10 @@ python3 components for the pypi-azure_core package.
 
 
 %prep
-%setup -q -n azure-core-1.29.3
-cd %{_builddir}/azure-core-1.29.3
+%setup -q -n azure-core-1.29.4
+cd %{_builddir}/azure-core-1.29.4
 pushd ..
-cp -a azure-core-1.29.3 buildavx2
+cp -a azure-core-1.29.4 buildavx2
 popd
 
 %build
@@ -66,7 +66,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692832551
+export SOURCE_DATE_EPOCH=1694186064
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
